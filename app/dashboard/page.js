@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Link from 'next/link' //
 import { saveList, getLists, deleteList } from '@/lib/storage'
 
 export default function Dashboard() {
@@ -31,6 +32,10 @@ export default function Dashboard() {
       <header className="grid" style={{gap:8}}>
         <h1>Parent Dashboard</h1>
         <p className="helper">Paste your child&rsquo;s weekly words. Keep one word per line (or separate by commas).</p>
+             <div className="row">
+          <Link href="/study"><button>Study</button></Link>
+          <Link href="/flashcards"><button>Flashcards</button></Link>
+        </div>
       </header>
 
       <form className="card grid" style={{gap:14}} onSubmit={onAdd}>

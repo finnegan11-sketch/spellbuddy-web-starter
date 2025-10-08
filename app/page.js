@@ -6,6 +6,7 @@ import { getLists } from '@/lib/storage'
 export default function Home() {
   const [count, setCount] = useState(0)
   useEffect(() => setCount(getLists().length), [])
+
   return (
     <main className="grid" style={{gap: 24}}>
       <header className="grid" style={{gap: 8}}>
@@ -18,13 +19,14 @@ export default function Home() {
       <section className="card grid" style={{gap:16}} aria-labelledby="quickstart">
         <h2 id="quickstart">Quick Start</h2>
         <ol>
-          <li>Go to the <Link href="/dashboard">Parent Dashboard</Link> and paste this week&rsquo;s words.</li>
-          <li>Open <Link href="/study">Study</Link> and practice with audio + checks.</li>
+          <li>Go to the <Link href="/dashboard">Parent Dashboard</Link> and paste this week’s words.</li>
+          <li>Open <Link href="/study">Study</Link> or <Link href="/flashcards">Flashcards</Link> to practice.</li>
         </ol>
-        <p className="helper">Lists saved locally on this device. You can add cloud sync later.</p>
+        <p className="helper">Lists are saved locally on this device. You can add cloud sync later.</p>
         <div className="row">
           <Link href="/dashboard"><button>Open Parent Dashboard</button></Link>
           <Link href="/study"><button>Start Studying</button></Link>
+          <Link href="/flashcards"><button>Flashcards (Definitions)</button></Link>
         </div>
       </section>
 
